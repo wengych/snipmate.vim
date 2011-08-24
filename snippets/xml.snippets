@@ -1,0 +1,115 @@
+# Project
+snippet project
+	<?xml version="1.0" encoding="UTF-8"?>
+	<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	  <modelVersion>4.0.0</modelVersion>
+
+	  <groupId>${1:groupId}</groupId>
+	  <artifactId>${2:artifactId}</artifactId>
+	  <packaging>${3:pom}</packaging>
+	  <name>${4:name}</name>
+	</project>
+
+# Parent
+snippet parent
+	<parent>
+	  <groupId>${1:parentGroupId}</groupId>
+	  <artifactId>${2:parentArtifactId}</artifactId>
+	</parent>
+# Build
+snippet build
+	<build>
+	  <plugins>
+	    ${1}
+	  </plugins>
+	</build>
+# Plugin
+snippet plugin
+	<plugin>
+	  <groupId>${1:pluginGroupId}</groupId>
+	  <artifactId>${2:pluginArtifactId}</artifactId>
+	  <version>${3:pluginVersion}</version>
+	</plugin>
+# Dependencies
+snippet deps
+	<dependencies>
+	  ${1}
+	</dependencies>
+# Dependency
+snippet dep
+	<dependency>
+	  <groupId>${1}</groupId>
+	  <artifactId>${2}</artifactId>
+	  <version>${3}</version>
+	</dependency>
+# Properties
+snippet prop
+	<properties>
+	  ${1}
+	</properties>
+# Configuration
+snippet conf
+	<configuration>
+	  ${1}
+	</configuration>
+# DistributionManagement
+snippet dism
+	<distributionManagement>
+	  <repository>
+	    <id>fizzback-cn-releases</id>
+	    <url>http://repo.cn.fizzback.net/nexus/content/repositories/releases</url>
+	  </repository>
+	  <snapshotRepository>
+	    <id>fizzback-cn-snapshots</id>
+	    <url>http://repo.cn.fizzback.net/nexus/content/repositories/snapshots</url>
+	  </snapshotRepository>
+	</distributionManagement>
+# New pom
+snippet pom
+	<?xml version="1.0" encoding="UTF-8"?>
+	<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	  <modelVersion>4.0.0</modelVersion>
+	
+	  <groupId>${1:groupId}</groupId>
+	  <artifactId>${2:artifactId}</artifactId>
+	  <packaging>${3:type}</packaging>
+	  <name>${4:name}</name>
+	
+	  <build>
+	    <sourceDirectory>$3</sourceDirectory>
+	    <plugins>
+	      <plugin>
+	        <groupId>${5:pluginGroupId}</groupId>
+	        <artifactId>${6:pluginArtifactId}</artifactId>
+	        <version>${7:pluginVersion}</version>
+	      </plugin>
+	    </plugins>
+	  </build>
+	</project>
+
+# flexmojos pom
+snippet flexmojos
+	<?xml version="1.0" encoding="UTF-8"?>
+	<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	  <modelVersion>4.0.0</modelVersion>
+	
+	  <groupId>${1:groupId}</groupId>
+	  <artifactId>${2:artifactId}</artifactId>
+	  <packaging>${3:swf}</packaging>
+	  <name>${4:name}</name>
+	
+	  <build>
+	    <sourceDirectory>${basedir}/src/main/${5:dir}</sourceDirectory>
+	    <plugins>
+	      <plugin>
+	        <groupId>org.sonatype.flexmojos</groupId>
+	        <artifactId>flexmojos-maven-plugin</artifactId>
+	        <version>${6:3.8}</version>
+	      </plugin>
+	    </plugins>
+	  </build>
+	</project>
+
+# Module
+snippet module
+	<module>${1}</module>
