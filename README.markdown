@@ -1,5 +1,3 @@
-Quickly install with:
+Clone from https://github.com/msanders/snipmate.vim
+Snipets for Maven POM edit.
 
-    git clone git://github.com/msanders/snipmate.vim.git
-	cd snipmate.vim
-	cp -R * ~/.vim
